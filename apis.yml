@@ -1,23 +1,106 @@
 aid: terna
+
 name: Terna
-description: 'Terna is a company surfaced via the API Evangelist harvest backlog (source: energy) and
-  added to the network as a stub for full-pipeline profiling.'
+
+image: https://www.terna.it/DesktopModules/AdactoBackend/API/download/get?image=12133
+
+description: Terna S.p.A. is Italy’s leading electricity transmission system operator, responsible for managing the high‑voltage grid, ensuring
+  reliable power supply, and driving the energy transition toward renewable sources. The company operates over 75,000 km of transmission lines,
+  connects with neighboring countries, and invests billions in digital innovation and sustainability initiatives.
+
 url: https://raw.githubusercontent.com/api-evangelist/terna/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:energy
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-23'
+
 modified: '2026-09-23'
+
 tags:
-- Company
-apis: []
+- Energy
+- Transmission
+- Infrastructure
+- Italy
+- Renewable
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/terna-rules.yml
+- type: JSONLD
+  url: json-ld/terna-context.jsonld
+- type: Vocabulary
+  url: vocabulary/terna-vocabulary.yml
+- type: DataModel
+  url: data-model/terna-data-model.yml
+- type: Authentication
+  url: authentication/terna-authentication.yml
+- type: Conformance
+  url: conformance/terna-conformance.yml
+- type: Hosts
+  url: hosts/terna-hosts.yml
+- type: PrivacyPolicy
+  url: https://developer.terna.it/privacy_and_cookie_policy
+- type: DomainSecurity
+  url: security/terna-domain-security.yml
 - type: Website
   url: https://www.terna.it/
+- type: Documentation
+  url: https://www.terna.it/it/developer
+- type: DeveloperPortal
+  url: https://www.terna.it/it/developer
+- type: GettingStarted
+  url: https://www.terna.it/it/chi-siamo/terna-breve
+- type: Support
+  url: https://www.terna.it/it/contatti
+
+apis:
+- aid: terna:terna-api
+  name: Terna API
+  description: 'Terna API as documented publicly: 10 operations. Contract generated from the documentation by API Evangelist (2026-09-23); not
+    the provider''s own document.'
+  humanURL: https://developer.terna.it/docs/read/Access_Token
+  baseURL: https://api.terna.it
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/terna-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/terna-get-fees-v10-monthly-summary-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-ifees-v10-market-marketid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-output-outputid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-aste-fcr-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-generation-v20-v20-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-transparency-v10-v10-id-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Documentation is served as HTML pages without machine‑readable OpenAPI or other contracts.
+  evidence:
+  - url: https://developer.terna.it/docs
+    status: 200
+  checked: 2026-09-23
+x-enrichment:
+  date: '2026-09-23'
+  status: enriched
+  artifacts_added: 18
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local

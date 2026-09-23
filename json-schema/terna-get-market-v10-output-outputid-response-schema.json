@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/terna/main/json-schema/terna-get-market-v10-output-outputid-response-schema.json",
+  "title": "GetMarketV10OutputOutputidResponse",
+  "x-generated": "2026-09-23",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/terna-openapi-generated.yml#/components/schemas/GetMarketV10OutputOutputidResponse",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "accepted_offers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reference_date": {
+            "type": "string"
+          },
+          "date_tz": {
+            "type": "string"
+          },
+          "offset": {
+            "type": "string"
+          },
+          "zone": {
+            "type": "string"
+          },
+          "session_type": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string"
+          },
+          "offer": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

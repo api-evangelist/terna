@@ -1,0 +1,21 @@
+generated: '2026-09-23'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://developer.terna.it/docs/read/Access_Token
+sources:
+- https://developer.terna.it/docs/read/Access_Token
+- https://developer.terna.it/docs/read/Getting_Started
+- https://developer.terna.it/docs/read/getting_started/Oauth2
+- https://developer.terna.it/docs/read/getting_started/OIDC
+description: Terna uses OAuth2 client credentials flow to obtain access tokens.
+schemes:
+- type: oauth2
+  name: OAuth2 Client Credentials
+  evidence: Access to our services is controlled by tokens for via Oauth2.0. To obtain a token you must invoke the associated endpoint and provide
+    your client key and client secret.
+  flows:
+  - client_credentials
+  token_url: https://api.terna.it/public-api/access-token
+  how_to_obtain: Create an application to receive a client_id (client key) and client_secret, then POST them with grant_type=client_credentials
+    to the token endpoint.
+docs: https://developer.terna.it/docs/read/Access_Token

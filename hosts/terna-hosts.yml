@@ -1,0 +1,155 @@
+generated: '2026-09-23'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 13
+  own: 13
+  other_domain: 0
+  platform: 0
+  roles:
+  - api
+  - legal
+  - other
+  - website
+hosts:
+- host: api.terna.it
+  found_by:
+  - apis[]
+  - contract-discovery
+  types: []
+  serves:
+  - api
+  registrable_domain: terna.it
+  role: api
+  relation: own
+- host: cieloterramare.terna.it
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: terna.it
+  role: other
+  relation: own
+- host: developer.terna.it
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - PrivacyPolicy
+  serves:
+  - docs
+  registrable_domain: terna.it
+  role: legal
+  relation: own
+- host: gstat.terna.it
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: terna.it
+  role: other
+  relation: own
+- host: lightbox.terna.it
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: terna.it
+  role: other
+  relation: own
+- host: mercato.terna.it
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: terna.it
+  role: other
+  relation: own
+- host: my.terna.it
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: terna.it
+  role: other
+  relation: own
+- host: myterna.terna.it
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: terna.it
+  role: other
+  relation: own
+- host: portaleacquisti.terna.it
+  found_by:
+  - probed
+  - site-links
+  types: []
+  serves: []
+  registrable_domain: terna.it
+  role: other
+  relation: own
+- host: secureproc.terna.it
+  found_by:
+  - probed
+  - site-links
+  types: []
+  serves: []
+  registrable_domain: terna.it
+  role: other
+  relation: own
+- host: upq.terna.it
+  found_by:
+  - probed
+  - site-links
+  types: []
+  serves: []
+  registrable_domain: terna.it
+  role: other
+  relation: own
+- host: whistleblowing.terna.it
+  found_by:
+  - probed
+  - site-links
+  types: []
+  serves: []
+  registrable_domain: terna.it
+  role: other
+  relation: own
+- host: www.terna.it
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  - Documentation
+  - DeveloperPortal
+  - GettingStarted
+  - Support
+  serves: []
+  registrable_domain: terna.it
+  role: website
+  relation: own

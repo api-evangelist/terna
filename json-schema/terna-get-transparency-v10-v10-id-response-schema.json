@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/terna/main/json-schema/terna-get-transparency-v10-v10-id-response-schema.json",
+  "title": "GetTransparencyV10V10IdResponse",
+  "x-generated": "2026-09-23",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/terna-openapi-generated.yml#/components/schemas/GetTransparencyV10V10IdResponse",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "actual_generation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "date_tz": {
+            "type": "string"
+          },
+          "date_offset": {
+            "type": "string"
+          },
+          "actual_generation_GWh": {
+            "type": "string"
+          },
+          "primary_source": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
