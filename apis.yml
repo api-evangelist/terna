@@ -28,6 +28,12 @@ tags:
 - Transmission
 - Infrastructure
 - Italy
+- Renewables
+tags_raw:
+- Energy
+- Transmission
+- Infrastructure
+- Italy
 - Renewable
 
 maintainers:
@@ -67,16 +73,16 @@ common:
   url: https://www.terna.it/it/contatti
 
 apis:
-- aid: terna:terna-api
-  name: Terna API
-  description: 'Terna API as documented publicly: 10 operations. Contract generated from the documentation by API Evangelist (2026-09-23); not
-    the provider''s own document.'
+- aid: terna:terna-fees-api
+  name: Terna Fees API
+  description: The Fees API from Terna — 1 operation(s) for fees.
   humanURL: https://developer.terna.it/docs/read/Access_Token
   baseURL: https://api.terna.it
+  tags:
+  - Fees
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/terna-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/terna-fees-api-openapi.yml
   - type: JSONSchema
     url: json-schema/terna-get-fees-v10-monthly-summary-response-schema.json
   - type: JSONSchema
@@ -89,7 +95,138 @@ apis:
     url: json-schema/terna-get-generation-v20-v20-id-response-schema.json
   - type: JSONSchema
     url: json-schema/terna-get-transparency-v10-v10-id-response-schema.json
-
+- aid: terna:terna-generation-api
+  name: Terna Generation API
+  description: The Generation API from Terna — 1 operation(s) for generation.
+  humanURL: https://developer.terna.it/docs/read/Access_Token
+  baseURL: https://api.terna.it
+  tags:
+  - Generation
+  properties:
+  - type: OpenAPI
+    url: openapi/terna-generation-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/terna-get-fees-v10-monthly-summary-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-ifees-v10-market-marketid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-output-outputid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-aste-fcr-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-generation-v20-v20-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-transparency-v10-v10-id-response-schema.json
+- aid: terna:terna-ifees-api
+  name: Terna Ifees API
+  description: The Ifees API from Terna — 1 operation(s) for ifees.
+  humanURL: https://developer.terna.it/docs/read/Access_Token
+  baseURL: https://api.terna.it
+  tags:
+  - Ifees
+  properties:
+  - type: OpenAPI
+    url: openapi/terna-ifees-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/terna-get-fees-v10-monthly-summary-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-ifees-v10-market-marketid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-output-outputid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-aste-fcr-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-generation-v20-v20-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-transparency-v10-v10-id-response-schema.json
+- aid: terna:terna-load-api
+  name: Terna Load API
+  description: The Load API from Terna — 1 operation(s) for load.
+  humanURL: https://developer.terna.it/docs/read/Access_Token
+  baseURL: https://api.terna.it
+  tags:
+  - Load
+  properties:
+  - type: OpenAPI
+    url: openapi/terna-load-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/terna-get-fees-v10-monthly-summary-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-ifees-v10-market-marketid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-output-outputid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-aste-fcr-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-generation-v20-v20-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-transparency-v10-v10-id-response-schema.json
+- aid: terna:terna-market-api
+  name: Terna Market API
+  description: The Market API from Terna — 3 operation(s) for market.
+  humanURL: https://developer.terna.it/docs/read/Access_Token
+  baseURL: https://api.terna.it
+  tags:
+  - Market
+  properties:
+  - type: OpenAPI
+    url: openapi/terna-market-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/terna-get-fees-v10-monthly-summary-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-ifees-v10-market-marketid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-output-outputid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-aste-fcr-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-generation-v20-v20-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-transparency-v10-v10-id-response-schema.json
+- aid: terna:terna-public-api-api
+  name: Terna Public API
+  description: The Public Api API from Terna — 1 operation(s) for public api.
+  humanURL: https://developer.terna.it/docs/read/Access_Token
+  baseURL: https://api.terna.it
+  tags:
+  - Public Api
+  properties:
+  - type: OpenAPI
+    url: openapi/terna-public-api-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/terna-get-fees-v10-monthly-summary-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-ifees-v10-market-marketid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-output-outputid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-aste-fcr-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-generation-v20-v20-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-transparency-v10-v10-id-response-schema.json
+- aid: terna:terna-transparency-api
+  name: Terna Transparency API
+  description: The Transparency API from Terna — 1 operation(s) for transparency.
+  humanURL: https://developer.terna.it/docs/read/Access_Token
+  baseURL: https://api.terna.it
+  tags:
+  - Transparency
+  properties:
+  - type: OpenAPI
+    url: openapi/terna-transparency-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/terna-get-fees-v10-monthly-summary-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-ifees-v10-market-marketid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-output-outputid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-market-v10-aste-fcr-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-generation-v20-v20-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/terna-get-transparency-v10-v10-id-response-schema.json
 x-coverage:
   state: unreadable
   reason: js-rendered-docs

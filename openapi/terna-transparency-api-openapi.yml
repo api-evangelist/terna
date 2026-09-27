@@ -1,0 +1,132 @@
+openapi: 3.2.0
+info:
+  title: Terna Transparency API
+  version: '2026-09-23'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-23: 10 operation(s) read from 35 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Terna has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 40
+    documentation: -30
+    pages-with-code: 35
+    pages-read: 35
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-23'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.terna.it/docs/read/Access_Token
+  - https://developer.terna.it/docs/read/How_to_make_a_request
+  - https://developer.terna.it/docs/apis_catalog/market/Aste_FCR
+  - https://developer.terna.it/docs/read/apis_catalog/load/Total
+  - https://developer.terna.it/docs/read/apis_catalog/load/Market
+  - https://developer.terna.it/docs/read/apis_catalog/market/Costs
+  - https://developer.terna.it/docs/read/apis_catalog/market/Prices
+  - https://developer.terna.it/docs/read/apis_catalog/load/Total_Load
+  - https://developer.terna.it/docs/read/apis_catalog/market/Aste_FCR
+  - https://developer.terna.it/docs/read/apis_catalog/market/Quantity
+  - https://developer.terna.it/docs/read/apis_catalog/load/Market_Load
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Daily_Prices
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Hydric
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Monthly_Summary
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Zonal_Exchanges
+  - https://developer.terna.it/docs/read/apis_catalog/load/Industry_Sector
+  - https://developer.terna.it/docs/read/apis_catalog/load/PeakValley_Load
+  - https://developer.terna.it/docs/read/apis_catalog/load/Services_Sector
+  - https://developer.terna.it/docs/read/apis_catalog/market/Load_Forecast
+  - https://developer.terna.it/docs/read/apis_catalog/market/Transit_Limits
+  - https://developer.terna.it/docs/read/apis_catalog/market/Accepted_Offers
+  - https://developer.terna.it/docs/read/apis_catalog/market/Transit_Margins
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Preliminary_Prices
+  - https://developer.terna.it/docs/read/apis_catalog/market/Submitted_Offers
+  - https://developer.terna.it/docs/apis_catalog/market/Forecast_Transit_Limits
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Energy_Balance
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Actual_Generation
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Generation_Plants
+  - https://developer.terna.it/docs/read/apis_catalog/load/PeakValley_Load_Details
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Installed_Capacity
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Commercial_Balance_Prices
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Thermoelectric_Heat
+  - https://developer.terna.it/docs/read/apis_catalog/load/Demand_coverage_by_source
+  - https://developer.terna.it/docs/read/apis_catalog/load/electrical_energy_by_type
+  - https://developer.terna.it/docs/read/apis_catalog/market/Forecast_Transit_Limits
+servers:
+- url: https://api.terna.it
+security:
+- apiKey: []
+tags:
+- name: Transparency
+paths:
+  /transparency/v1.0/{v10id}:
+    get:
+      operationId: get_transparency_v1_0_v10id
+      tags:
+      - Transparency
+      summary: GET /transparency/v1.0/getactualgeneration
+      x-source: https://developer.terna.it/docs/read/apis_catalog/generation/Actual_Generation
+      parameters:
+      - name: v10id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: dateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: type
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTransparencyV10V10IdResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location --request GET 'https://api.terna.it/transparency/v1.0/getactualgeneration?dateFrom=2/3/2019&dateTo=20/3/2019&type=Wind&type=Hydro' --header 'Authorization: <token>' \n Response \n {\n \"result\": {\n \"message\": \"Operation completed for the following request: {$and:[{DATA_ORA:{$gte:\\\"2019-03-02\\\", $lte:\\\"2019-03-20\\\"}},{DATA_ORA:{$lt:\\\"2023-07-31\\\"}}], TIPO:{$in:[ \\\"Wind\\\", \\\"Hydro\\\" ]}}\""
+        collapsed_from: 7 example path(s) differing only at v10Id
+components:
+  schemas:
+    GetTransparencyV10V10IdResponse:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            message:
+              type: string
+            status:
+              type: string
+        actual_generation:
+          type: array
+          items:
+            type: object
+            properties:
+              date:
+                type: string
+                format: date-time
+              date_tz:
+                type: string
+              date_offset:
+                type: string
+              actual_generation_GWh:
+                type: string
+              primary_source:
+                type: string
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization

@@ -1,0 +1,270 @@
+openapi: 3.2.0
+info:
+  title: Terna Market API
+  version: '2026-09-23'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-23: 10 operation(s) read from 35 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Terna has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 40
+    documentation: -30
+    pages-with-code: 35
+    pages-read: 35
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-23'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.terna.it/docs/read/Access_Token
+  - https://developer.terna.it/docs/read/How_to_make_a_request
+  - https://developer.terna.it/docs/apis_catalog/market/Aste_FCR
+  - https://developer.terna.it/docs/read/apis_catalog/load/Total
+  - https://developer.terna.it/docs/read/apis_catalog/load/Market
+  - https://developer.terna.it/docs/read/apis_catalog/market/Costs
+  - https://developer.terna.it/docs/read/apis_catalog/market/Prices
+  - https://developer.terna.it/docs/read/apis_catalog/load/Total_Load
+  - https://developer.terna.it/docs/read/apis_catalog/market/Aste_FCR
+  - https://developer.terna.it/docs/read/apis_catalog/market/Quantity
+  - https://developer.terna.it/docs/read/apis_catalog/load/Market_Load
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Daily_Prices
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Hydric
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Monthly_Summary
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Zonal_Exchanges
+  - https://developer.terna.it/docs/read/apis_catalog/load/Industry_Sector
+  - https://developer.terna.it/docs/read/apis_catalog/load/PeakValley_Load
+  - https://developer.terna.it/docs/read/apis_catalog/load/Services_Sector
+  - https://developer.terna.it/docs/read/apis_catalog/market/Load_Forecast
+  - https://developer.terna.it/docs/read/apis_catalog/market/Transit_Limits
+  - https://developer.terna.it/docs/read/apis_catalog/market/Accepted_Offers
+  - https://developer.terna.it/docs/read/apis_catalog/market/Transit_Margins
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Preliminary_Prices
+  - https://developer.terna.it/docs/read/apis_catalog/market/Submitted_Offers
+  - https://developer.terna.it/docs/apis_catalog/market/Forecast_Transit_Limits
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Energy_Balance
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Actual_Generation
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Generation_Plants
+  - https://developer.terna.it/docs/read/apis_catalog/load/PeakValley_Load_Details
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Installed_Capacity
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Commercial_Balance_Prices
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Thermoelectric_Heat
+  - https://developer.terna.it/docs/read/apis_catalog/load/Demand_coverage_by_source
+  - https://developer.terna.it/docs/read/apis_catalog/load/electrical_energy_by_type
+  - https://developer.terna.it/docs/read/apis_catalog/market/Forecast_Transit_Limits
+servers:
+- url: https://api.terna.it
+security:
+- apiKey: []
+tags:
+- name: Market
+paths:
+  /market/v1.0/aste-fcr:
+    get:
+      operationId: get_market_v1_0_aste_fcr
+      tags:
+      - Market
+      summary: GET /market/v1.0/aste-fcr
+      x-source: https://developer.terna.it/docs/apis_catalog/market/Aste_FCR
+      parameters:
+      - name: dateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: direction
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMarketV10AsteFcrResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location --request GET 'https://api.terna.it/market/v1.0/aste-fcr?dateFrom=05/12/2025&direction=UP' --header 'Authorization: <token>' \n Response \n {\n \"result\": {\n \"message\": \"Operation completed for the following input. Market Date: 05/12/2025\",\n \"status\": \"Completed\"\n },\n \"aste_fcr\": [\n {\n \"date\": \"2025-12-05 00:00:00\",\n \"session\": \"FCR\",\n \"zone\": \"Calabria\",\n \"direction\": \"UP\",\n \"price\": "
+  /market/v1.0/input/{inputid}:
+    get:
+      operationId: get_market_v1_0_input_inputid
+      tags:
+      - Market
+      summary: GET /market/v1.0/input/forecast-load
+      x-source: https://developer.terna.it/docs/read/apis_catalog/market/Load_Forecast
+      parameters:
+      - name: inputid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: dateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: sessionType
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMarketV10InputInputidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location --request GET 'https://api.terna.it/market/v1.0/input/forecast-load?dateFrom=22/11/23&dateTo=22/11/23&sessionType=MSD1' --header 'Authorization: <token>' \n Response \n {\n \"result\": {\n \"message\": \"string\",\n \"status\": \"string\"\n },\n \"forecast_load\": [\n {\n \"reference_date\": \"string\",\n \"date_tz\": \"string\",\n \"offset\": \"string\",\n \"zone\": \"string\",\n \"session_type\": \"string\",\n \"load_MW\": \"st"
+        collapsed_from: 4 example path(s) differing only at inputId
+  /market/v1.0/output/{outputid}:
+    get:
+      operationId: get_market_v1_0_output_outputid
+      tags:
+      - Market
+      summary: GET /market/v1.0/output/accepted-offers
+      x-source: https://developer.terna.it/docs/read/apis_catalog/market/Accepted_Offers
+      parameters:
+      - name: outputid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: dateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: direction
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: sessionType
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMarketV10OutputOutputidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location --request GET 'https://api.terna.it/market/v1.0/output/accepted-offers?dateFrom=22/11/23&dateTo=22/11/23&sessionType=MSD1&direction=UP' --header 'Authorization: <token>' \n Response \n {\n \"result\": {\n \"message\": \"string\",\n \"status\": \"string\"\n },\n \"accepted_offers\": [\n {\n \"reference_date\": \"string\",\n \"date_tz\": \"string\",\n \"offset\": \"string\",\n \"zone\": \"string\",\n \"session_type\": \"string"
+        collapsed_from: 5 example path(s) differing only at outputId
+components:
+  schemas:
+    GetMarketV10OutputOutputidResponse:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            message:
+              type: string
+            status:
+              type: string
+        accepted_offers:
+          type: array
+          items:
+            type: object
+            properties:
+              reference_date:
+                type: string
+              date_tz:
+                type: string
+              offset:
+                type: string
+              zone:
+                type: string
+              session_type:
+                type: string
+              type:
+                type: string
+              direction:
+                type: string
+              offer:
+                type: string
+    GetMarketV10AsteFcrResponse:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            message:
+              type: string
+            status:
+              type: string
+        aste_fcr:
+          type: array
+          items:
+            type: object
+            properties:
+              date:
+                type: string
+                format: date-time
+              session:
+                type: string
+              zone:
+                type: string
+              direction:
+                type: string
+              price:
+                type:
+                - string
+                - 'null'
+              quantity:
+                type: string
+              requirement:
+                type: string
+    GetMarketV10InputInputidResponse:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            message:
+              type: string
+            status:
+              type: string
+        forecast_load:
+          type: array
+          items:
+            type: object
+            properties:
+              reference_date:
+                type: string
+              date_tz:
+                type: string
+              offset:
+                type: string
+              zone:
+                type: string
+              session_type:
+                type: string
+              load_MW:
+                type: string
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization

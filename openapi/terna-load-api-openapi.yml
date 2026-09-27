@@ -1,0 +1,119 @@
+openapi: 3.2.0
+info:
+  title: Terna Load API
+  version: '2026-09-23'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-23: 10 operation(s) read from 35 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Terna has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 40
+    documentation: -30
+    pages-with-code: 35
+    pages-read: 35
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-23'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.terna.it/docs/read/Access_Token
+  - https://developer.terna.it/docs/read/How_to_make_a_request
+  - https://developer.terna.it/docs/apis_catalog/market/Aste_FCR
+  - https://developer.terna.it/docs/read/apis_catalog/load/Total
+  - https://developer.terna.it/docs/read/apis_catalog/load/Market
+  - https://developer.terna.it/docs/read/apis_catalog/market/Costs
+  - https://developer.terna.it/docs/read/apis_catalog/market/Prices
+  - https://developer.terna.it/docs/read/apis_catalog/load/Total_Load
+  - https://developer.terna.it/docs/read/apis_catalog/market/Aste_FCR
+  - https://developer.terna.it/docs/read/apis_catalog/market/Quantity
+  - https://developer.terna.it/docs/read/apis_catalog/load/Market_Load
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Daily_Prices
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Hydric
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Monthly_Summary
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Zonal_Exchanges
+  - https://developer.terna.it/docs/read/apis_catalog/load/Industry_Sector
+  - https://developer.terna.it/docs/read/apis_catalog/load/PeakValley_Load
+  - https://developer.terna.it/docs/read/apis_catalog/load/Services_Sector
+  - https://developer.terna.it/docs/read/apis_catalog/market/Load_Forecast
+  - https://developer.terna.it/docs/read/apis_catalog/market/Transit_Limits
+  - https://developer.terna.it/docs/read/apis_catalog/market/Accepted_Offers
+  - https://developer.terna.it/docs/read/apis_catalog/market/Transit_Margins
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Preliminary_Prices
+  - https://developer.terna.it/docs/read/apis_catalog/market/Submitted_Offers
+  - https://developer.terna.it/docs/apis_catalog/market/Forecast_Transit_Limits
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Energy_Balance
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Actual_Generation
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Generation_Plants
+  - https://developer.terna.it/docs/read/apis_catalog/load/PeakValley_Load_Details
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Installed_Capacity
+  - https://developer.terna.it/docs/read/apis_catalog/fees/Commercial_Balance_Prices
+  - https://developer.terna.it/docs/read/apis_catalog/generation/Thermoelectric_Heat
+  - https://developer.terna.it/docs/read/apis_catalog/load/Demand_coverage_by_source
+  - https://developer.terna.it/docs/read/apis_catalog/load/electrical_energy_by_type
+  - https://developer.terna.it/docs/read/apis_catalog/market/Forecast_Transit_Limits
+servers:
+- url: https://api.terna.it
+security:
+- apiKey: []
+tags:
+- name: Load
+paths:
+  /load/v2.0/{v20id}:
+    get:
+      operationId: get_load_v2_0_v20id
+      tags:
+      - Load
+      summary: GET /load/v2.0/demand-coverage-by-source
+      x-source: https://developer.terna.it/docs/read/apis_catalog/load/Demand_coverage_by_source
+      parameters:
+      - name: v20id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: year
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLoadV20V20IdResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location --request GET https://api.terna.it/load/v2.0/demand-coverage-by-source?year=<year>®ion=<region> \n --header 'Authorization:Bearer <OAuth Token>'\n Response \n{\n \"result\": {\n \"message\": \"string\",\n \"status\": \"string\"\n },\n \"demand_coverage_by_source\": [\n {\n \"year\": \"string\",\n \"region\": \"string\",\n \"source\": \"string\",\n \"coverage_GWh\": \"string\"\n }\n ]\n} \n version 4 as of 12 months ago by Ali"
+        collapsed_from: 10 example path(s) differing only at v20Id
+components:
+  schemas:
+    GetLoadV20V20IdResponse:
+      type: object
+      properties:
+        result:
+          type: object
+          properties:
+            message:
+              type: string
+            status:
+              type: string
+        demand_coverage_by_source:
+          type: array
+          items:
+            type: object
+            properties:
+              year:
+                type: string
+              region:
+                type: string
+              source:
+                type: string
+              coverage_GWh:
+                type: string
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
