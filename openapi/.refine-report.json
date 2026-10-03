@@ -18,7 +18,15 @@
   "notes": [
     "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "terna-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: written (+7 apis, 7 total)"
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "terna-fees-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "terna-generation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "terna-ifees-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "terna-load-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "terna-market-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "terna-public-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "terna-transparency-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
