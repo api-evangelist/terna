@@ -167,6 +167,8 @@ apis:
   humanURL: https://developer.terna.it/docs/read/Access_Token
   baseURL: https://api.terna.it
   tags:
+  - Markets
+  tags_raw:
   - Market
   properties:
   - type: OpenAPI
@@ -189,6 +191,8 @@ apis:
   humanURL: https://developer.terna.it/docs/read/Access_Token
   baseURL: https://api.terna.it
   tags:
+  - Public APIs
+  tags_raw:
   - Public Api
   properties:
   - type: OpenAPI
