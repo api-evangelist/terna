@@ -64,5 +64,123 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Terna is a company surfaced via the API Evangelist harvest backlog (source: energy) and added to the network as a stub for full-pipeline profiling.
-- https://www.terna.it/
+Terna S.p.A. is Italy’s leading electricity transmission system operator, responsible for managing the high‑voltage grid, ensuring reliable power supply, and driving the energy transition toward renewable sources. The company operates over 75,000 km of transmission lines, connects with neighboring countries, and invests billions in digital innovation and sustainability initiatives.
+
+**Areas:** Energy · Transmission · Infrastructure · Italy · Renewables
+
+## Terna on APIs.io
+
+Everything profiled for Terna is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/terna/](https://apis.io/providers/terna/)** — or go straight to one of the APIs or properties below.
+
+### APIs (7)
+
+- [Terna Fees API](https://apis.io/apis/terna/terna-fees-api/) — The Fees API from Terna — 1 operation(s) for fees.
+- [Terna Generation API](https://apis.io/apis/terna/terna-generation-api/) — The Generation API from Terna — 1 operation(s) for generation.
+- [Terna Ifees API](https://apis.io/apis/terna/terna-ifees-api/) — The Ifees API from Terna — 1 operation(s) for ifees.
+- [Terna Load API](https://apis.io/apis/terna/terna-load-api/) — The Load API from Terna — 1 operation(s) for load.
+- [Terna Market API](https://apis.io/apis/terna/terna-market-api/) — The Market API from Terna — 3 operation(s) for market.
+- [Terna Public API](https://apis.io/apis/terna/terna-public-api-api/) — The Public Api API from Terna — 1 operation(s) for public api.
+- [Terna Transparency API](https://apis.io/apis/terna/terna-transparency-api/) — The Transparency API from Terna — 1 operation(s) for transparency.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [terna-mcp.yml](https://apis.io/servers/terna/terna-mcp-yml/)
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [GetFeesV10MonthlySummaryResponse](https://apis.io/schemas/terna/terna-get-fees-v10-monthly-summary-response/)
+- [GetGenerationV20V20IdResponse](https://apis.io/schemas/terna/terna-get-generation-v20-v20-id-response/)
+- [GetIfeesV10MarketMarketidResponse](https://apis.io/schemas/terna/terna-get-ifees-v10-market-marketid-response/)
+- [GetMarketV10AsteFcrResponse](https://apis.io/schemas/terna/terna-get-market-v10-aste-fcr-response/)
+- [GetMarketV10OutputOutputidResponse](https://apis.io/schemas/terna/terna-get-market-v10-output-outputid-response/)
+- [GetTransparencyV10V10IdResponse](https://apis.io/schemas/terna/terna-get-transparency-v10-v10-id-response/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Terna Context](https://apis.io/jsonld/terna/terna-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Terna API Rules](https://apis.io/rules/terna/terna-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Terna Authentication](https://apis.io/security/terna/terna-authentication/)
+- [Terna Domain Security](https://apis.io/security/terna/terna-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.terna.it/)
+- [Documentation](https://www.terna.it/it/developer)
+- [Getting started](https://www.terna.it/it/chi-siamo/terna-breve)
+- [Support](https://www.terna.it/it/contatti)
+- [Privacy policy](https://developer.terna.it/privacy_and_cookie_policy)
+
+## API Evangelist rating
+
+**Kin Score 27.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 26.1 |
+| Contract governance | 19.7 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 47.6 |
+| Access clarity | 10.5 |
+
+**Agent readiness 20.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 17.2** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/terna/](https://apis.io/providers/terna/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Terna: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/terna/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
